@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibroxa Studio - Freelancing Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #ffffff;
+        }
+        
+        .dark {
+            --primary: #ffffff;
+            --secondary: #000000;
+        }
+        
+        body {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle {
+            cursor: pointer;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width .3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header/Navbar -->
+    <header class="fixed w-full z-50 bg-white dark:bg-black shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="1.png" alt="Vibroxa Studio Logo" class="h-10 w-10 mr-2">
+                    <a href="#" class="text-xl font-bold text-black dark:text-white">Vibroxa Studio</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-black dark:text-white">Home</a>
+                    <a href="#about" class="nav-link text-black dark:text-white">About</a>
+                    <a href="#services" class="nav-link text-black dark:text-white">Services</a>
+                    <a href="#portfolio" class="nav-link text-black dark:text-white">Portfolio</a>
+                    <a href="#testimonials" class="nav-link text-black dark:text-white">Testimonials</a>
+                    <a href="#contact" class="nav-link text-black dark:text-white">Contact</a>
+                    <div class="theme-toggle p-2 rounded-full bg-gray-200 dark:bg-gray-800">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <div class="theme-toggle p-2 mr-2 rounded-full bg-gray-200 dark:bg-gray-800">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+                    </div>
+                    <button id="menu-toggle" class="text-black dark:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-white dark:bg-black">
+                <div class="px-2 pt-2 pb-4 space-y-1">
+                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Home</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">About</a>
+                    <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Services</a>
+                    <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Portfolio</a>
+                    <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Testimonials</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">Transform Your Digital Presence</h1>
+                    <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">Vibroxa Studio delivers cutting-edge digital solutions to help businesses thrive in the modern world. From development to marketing, we've got you covered.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-medium rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition">Get Started</a>
+                        <a href="#portfolio" class="px-6 py-3 border-2 border-black dark:border-white text-black dark:text-white font-medium rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition">View Work</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Digital Solutions" class="rounded-lg shadow-xl w-full max-w-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white dark:bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-black dark:text-white">About Vibroxa Studio</h2>
+                <div class="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6 text-black dark:text-white">Who We Are</h3>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">Vibroxa Studio is a premier freelancing agency based in Lahore, Pakistan, serving clients worldwide. We specialize in delivering comprehensive digital solutions tailored to your business needs.</p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">Our team of experts combines technical expertise with creative vision to help startups and established businesses grow their online presence and achieve their digital goals.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-black dark:text-white">Experienced Team</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-black dark:text-white">Quality Assurance</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-black dark:text-white">Client-Centric</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-black dark:text-white">Innovative Solutions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-black dark:text-white">Our Services</h2>
+                <div class="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
+                <p class="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">Comprehensive digital solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-4xl mb-4 text-blue-500">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">Web Development</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Full-stack web development using MERN stack (MongoDB, Express, React, Node.js) to create responsive, scalable, and high-performance websites.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-4xl mb-4 text-purple-500">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">App Development</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Cross-platform mobile app development using Flutter and React Native to create beautiful, high-performance applications for iOS and Android.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-4xl mb-4 text-red-500">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">Graphic Design</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Creative graphic design services including logos, branding, marketing materials, and UI/UX design to make your brand stand out.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-4xl mb-4 text-yellow-500">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">Video Editing</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Professional video editing services for YouTube, social media, commercials, and corporate videos to engage your audience.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-4xl mb-4 text-green-500">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">Digital Marketing</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Comprehensive digital marketing strategies including SEO, social media marketing, PPC, and content marketing to grow your online presence.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md transition duration-300">
+                    <div class="text-4xl mb-4 text-indigo-500">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">Business Development</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Strategic consulting and business development services to help startups and businesses grow and scale in the digital landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-white dark:bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-black dark:text-white">Our Portfolio</h2>
+                <div class="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
+                <p class="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">A showcase of our recent projects and client work</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="E-commerce Website" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white">E-commerce Platform</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Full-stack e-commerce solution with React frontend and Node.js backend</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">React</span>
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Node.js</span>
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fitness App" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white">Fitness Tracker App</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Cross-platform mobile application built with Flutter</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Flutter</span>
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Firebase</span>
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Dart</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Brand Identity" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-black dark:text-white">Brand Identity Package</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Complete branding solution including logo, business cards, and style guide</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Logo Design</span>
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Branding</span>
+                            <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Print Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-6 py-3 border-2 border-black dark:border-white text-black dark:text-white font-medium rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-black dark:text-white">Client Testimonials</h2>
+                <div class="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
+                <p class="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">What our clients say about working with us</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">"Vibroxa Studio transformed our online presence completely. Their web development team delivered a stunning e-commerce platform that has significantly increased our sales."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-black dark:text-white">Ahmed Khan</h4>
+                            <p class="text-gray-600 dark:text-gray-400">CEO, FashionHub</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">"The mobile app developed by Vibroxa Studio exceeded our expectations. Their attention to detail and user experience design is exceptional."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-black dark:text-white">Fatima Ali</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Founder, HealthTrack</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">"Their digital marketing strategies helped us triple our online leads within 3 months. Highly recommended for anyone looking to grow their business online."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-black dark:text-white">Usman Malik</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Marketing Director, TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white dark:bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-black dark:text-white">Get In Touch</h2>
+                <div class="w-20 h-1 bg-black dark:bg-white mx-auto"></div>
+                <p class="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">Ready to start your project? Contact us today</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h3 class="text-2xl font-bold mb-6 text-black dark:text-white">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black dark:text-white">Location</h4>
+                                <p class="text-gray-700 dark:text-gray-300">Lahore, Pakistan</p>
+                                <p class="text-gray-700 dark:text-gray-300">Remote Worldwide</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black dark:text-white">Email</h4>
+                                <p class="text-gray-700 dark:text-gray-300">vibroxastudio@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black dark:text-white">Phone</h4>
+                                <p class="text-gray-700 dark:text-gray-300">+92 346 9460341</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 text-gray-700 dark:text-gray-300">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black dark:text-white">Working Hours</h4>
+                                <p class="text-gray-700 dark:text-gray-300">Monday - Friday: 9am - 6pm</p>
+                                <p class="text-gray-700 dark:text-gray-300">Saturday: 10am - 2pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-black dark:text-white mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-2xl text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 text-black dark:text-white">How Can We Help?</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-8">Have a project in mind or want to discuss how we can help your business grow? Reach out to us directly using the contact information provided, and our team will get back to you as soon as possible.</p>
+                        
+                        <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg mb-6">
+                            <div class="flex">
+                                <div class="text-yellow-600 dark:text-yellow-300 mr-3">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                                <div>
+                                    <p class="text-yellow-800 dark:text-yellow-200">For fastest response, please contact us via WhatsApp at +92 346 9460341 or email at vibroxastudio@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold text-black dark:text-white mb-4">Our Expertise</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Web Development</span>
+                                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">App Development</span>
+                                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Graphic Design</span>
+                                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Video Editing</span>
+                                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Digital Marketing</span>
+                                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm text-black dark:text-white">Business Growth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black dark:bg-white text-white dark:text-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="1.png" alt="Vibroxa Studio Logo" class="h-10 w-10 mr-2">
+                        <span class="text-xl font-bold">Vibroxa Studio</span>
+                    </div>
+                    <p class="text-gray-400 dark:text-gray-600 mb-4">Your trusted partner for comprehensive digital solutions and business growth strategies.</p>
+                    <div class="flex space-x-4">
+                       
+                        <a href="https://www.linkedin.com/in/ashfaq4" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">App Development</a></li>
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Graphic Design</a></li>
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Video Editing</a></li>
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">About Us</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Portfolio</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gray-400 dark:text-gray-600 mr-2 mt-1"></i>
+                            <span class="text-gray-400 dark:text-gray-600">Lahore, Pakistan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 dark:text-gray-600 mr-2"></i>
+                            <span class="text-gray-400 dark:text-gray-600">vibroxastudio@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 dark:text-gray-600 mr-2"></i>
+                            <span class="text-gray-400 dark:text-gray-600">+92 346 9460341</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 dark:border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 dark:text-gray-600 mb-4 md:mb-0">© 2023 Vibroxa Studio. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Terms of Service</a>
+                    <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            
+            // Save preference to localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
