@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vibroxa Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Copy the same style section from index.html */
+        :root {
+            --primary: #000000;
+            --secondary: #ffffff;
+        }
+        
+        .dark {
+            --primary: #ffffff;
+            --secondary: #000000;
+        }
+        
+        body {
+            background-color: var(--secondary);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        /* Add the rest of the styles from index.html */
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header/Navbar -->
+<header class="fixed w-full bg-white dark:bg-black z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="1.png" alt="Vibroxa Studio Logo" class="h-12 w-12 rounded-full">
+                <span class="text-2xl font-bold text-black dark:text-white">Vibroxa Studio</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">Home</a>
+                <a href="about-us.html" class="text-blue-500">About Us</a>
+                <a href="services.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">Services</a>
+                <a href="portfolio.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">Portfolio</a>
+                <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">Contact</a>
+                <button id="darkModeToggle" class="text-gray-600 dark:text-gray-300">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+            </nav>
+            <button id="mobileMenuButton" class="md:hidden text-gray-600 dark:text-gray-300">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden">
+    <div class="bg-white dark:bg-gray-900 w-64 h-full transform transition-transform duration-300 ease-in-out">
+        <div class="p-4">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center space-x-3">
+                    <img src="1.png" alt="Vibroxa Studio Logo" class="h-10 w-10 rounded-full">
+                    <span class="text-xl font-bold text-black dark:text-white">Menu</span>
+                </div>
+                <button id="closeMobileMenu" class="text-gray-600 dark:text-gray-300">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="index.html" class="block text-gray-600 dark:text-gray-300">Home</a>
+                <a href="about-us.html" class="block text-blue-500">About Us</a>
+                <a href="services.html" class="block text-gray-600 dark:text-gray-300">Services</a>
+                <a href="portfolio.html" class="block text-gray-600 dark:text-gray-300">Portfolio</a>
+                <a href="contact.html" class="block text-gray-600 dark:text-gray-300">Contact</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+    <!-- Founder Section -->
+    <section id="founder" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="founder.jpg" alt="Muhammad Ashfaq Vishu" class="rounded-lg shadow-xl w-full max-w-lg mx-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">Meet Our Founder</h1>
+                    <h2 class="text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400">Muhammad Ashfaq Vishu</h2>
+                    <p class="text-lg mb-6 text-gray-700 dark:text-gray-300">A young and passionate 18-year-old programming enthusiast who founded Vibroxa Studio with a vision to revolutionize the digital landscape.</p>
+                    
+                    <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <p>Despite his young age, Ashfaq has demonstrated exceptional skills in web development, app development, and digital marketing. His journey began with a simple curiosity about how websites work, which quickly evolved into a deep passion for programming.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-16 bg-white dark:bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-black dark:text-white">Our Technology Stack</h2>
+            
+            <!-- Web Development Stack -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-blue-600 dark:text-blue-400">Web Development</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-html5 text-4xl mb-4 text-orange-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">HTML5</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-css3-alt text-4xl mb-4 text-blue-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">CSS3</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-js text-4xl mb-4 text-yellow-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">JavaScript</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-react text-4xl mb-4 text-blue-400"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">React.js</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-node text-4xl mb-4 text-green-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">Node.js</h4>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-python text-4xl mb-4 text-blue-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">Python</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Development Stack -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-purple-600 dark:text-purple-400">Mobile Development</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fas fa-mobile-alt text-4xl mb-4 text-blue-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">Flutter</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Cross-platform</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-react text-4xl mb-4 text-blue-400"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">React Native</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">iOS & Android</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fas fa-code text-4xl mb-4 text-cyan-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">Dart</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Flutter Development</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-js text-4xl mb-4 text-yellow-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">JavaScript</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">React Native</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database & Cloud -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold mb-8 text-green-600 dark:text-green-400">Database & Cloud Solutions</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fas fa-database text-4xl mb-4 text-green-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">MongoDB</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">NoSQL Database</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fas fa-fire text-4xl mb-4 text-orange-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">Firebase</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Real-time Database</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fab fa-aws text-4xl mb-4 text-yellow-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">AWS</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">Cloud Services</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg text-center hover:shadow-xl transition-all">
+                        <i class="fas fa-server text-4xl mb-4 text-blue-500"></i>
+                        <h4 class="text-lg font-semibold text-black dark:text-white">MySQL</h4>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">SQL Database</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Section -->
+    <section class="py-16 bg-white dark:bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-black dark:text-white">Our Professional Approach</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-black dark:text-white">Strategic Planning</h3>
+                    <p class="text-gray-600 dark:text-gray-300">We develop comprehensive strategies tailored to your business goals and market requirements.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <i class="fas fa-code text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-black dark:text-white">Technical Excellence</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Our team employs cutting-edge technologies and best practices to deliver robust solutions.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    <i class="fas fa-users text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3 text-black dark:text-white">Client-Focused</h3>
+                    <p class="text-gray-600 dark:text-gray-300">We prioritize client satisfaction and maintain clear communication throughout the project lifecycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center text-black dark:text-white">Our Development Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="relative">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mb-4">1</div>
+                        <h3 class="text-xl font-bold mb-3 text-black dark:text-white">Planning</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Requirements gathering and project scope definition</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mb-4">2</div>
+                        <h3 class="text-xl font-bold mb-3 text-black dark:text-white">Design</h3>
+                        <p class="text-gray-600 dark:text-gray-400">UI/UX design and architecture planning</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mb-4">3</div>
+                        <h3 class="text-xl font-bold mb-3 text-black dark:text-white">Development</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Agile development with regular updates</p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mb-4">4</div>
+                        <h3 class="text-xl font-bold mb-3 text-black dark:text-white">Deployment</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Testing, deployment and maintenance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Vibroxa Studio</h3>
+                    <p class="text-gray-400">Transforming ideas into digital reality</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="about-us.html" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">App Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Digital Marketing</a></li>
+     
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt w-5"></i>
+                            <span>Lahore, Pakistan</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope w-5"></i>
+                            <span>vibroxastudio@gmail.com</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone w-5"></i>
+                            <span>+92 349 2374801</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Vibroxa Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            html.classList.add('dark');
+        }
+
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        });
+
+        // Mobile menu functionality
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Mobile menu button text change
+        const menuButton = document.getElementById('mobileMenuButton');
+        menuButton.addEventListener('click', () => {
+            const icon = menuButton.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when ESC key is pressed
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                const icon = menuButton.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+    </script>
+</body>
+</html>
