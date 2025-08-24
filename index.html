@@ -20,7 +20,7 @@
         body {
             background-color: var(--secondary);
             color: var(--primary);
-            transition: all 0.3s ease;
+            transition: all 0.3s ease;/*  */
         }
         
         .theme-toggle {
@@ -77,7 +77,17 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="nav-link text-black dark:text-white">Home</a>
                     <a href="./about-us.html" class="nav-link text-black dark:text-white">About us</a>
-                    <a href="#services" class="nav-link text-black dark:text-white">Services</a>
+                    <div class="group relative">
+                        <a href="#services" class="nav-link text-black dark:text-white">Services</a>
+                        <div class="absolute hidden group-hover:block bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 min-w-[200px]">
+                            <a href="web-development.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Web Development</a>
+                            <a href="app-development.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">App Development</a>
+                            <a href="graphics-design.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Graphic Design</a>
+                            <a href="video-editing.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Video Editing</a>
+                            <a href="digital-marketing.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Digital Marketing</a>
+                            <a href="business-development.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Business Development</a>
+                        </div>
+                    </div>
                     <a href="#portfolio" class="nav-link text-black dark:text-white">Portfolio</a>
                     <a href="#testimonials" class="nav-link text-black dark:text-white">Testimonials</a>
                     <a href="#contact" class="nav-link text-black dark:text-white">Contact</a>
@@ -92,7 +102,7 @@
                         <i class="fas fa-moon dark:hidden"></i>
                         <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
                     </div>
-                    <button id="menu-toggle" class="text-black dark:text-white focus:outline-none">
+                    <button id="menu-toggle" class="text-black dark:text-white focus:outline-none" aria-label="Toggle menu">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -103,7 +113,17 @@
                 <div class="px-2 pt-2 pb-4 space-y-1">
                     <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Home</a>
                     <a href="./about-us.html" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">About us</a>
-                    <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Services</a>
+                    <div class="px-3 py-2">
+                        <span class="text-base font-medium text-black dark:text-white">Services</span>
+                        <div class="mt-1 space-y-1">
+                            <a href="web-development.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Web Development</a>
+                            <a href="app-development.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">App Development</a>
+                            <a href="graphics-design.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Graphic Design</a>
+                            <a href="video-editing.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Video Editing</a>
+                            <a href="digital-marketing.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Digital Marketing</a>
+                            <a href="business-development.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Business Development</a>
+                        </div>
+                    </div>
                     <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Portfolio</a>
                     <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Testimonials</a>
                     <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Contact</a>
@@ -185,7 +205,7 @@
                     <div class="text-4xl mb-4 text-blue-500">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">Web Development</h3>
+                    <a href="web-development.html" class="text-xl font-bold mb-4 text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400">Web Development</a>
                     <p class="text-gray-700 dark:text-gray-300">Full-stack web development using MERN stack (MongoDB, Express, React, Node.js) to create responsive, scalable, and high-performance websites.</p>
                 </div>
                 
@@ -194,7 +214,7 @@
                     <div class="text-4xl mb-4 text-purple-500">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">App Development</h3>
+                    <a href="app-development.html" class="text-xl font-bold mb-4 text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400">App Development</a>
                     <p class="text-gray-700 dark:text-gray-300">Cross-platform mobile app development using Flutter and React Native to create beautiful, high-performance applications for iOS and Android.</p>
                 </div>
                 
@@ -203,7 +223,7 @@
                     <div class="text-4xl mb-4 text-red-500">
                         <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-black dark:text-white">Graphic Design</h3>
+                    <a href="graphics-design.html" class="text-xl font-bold mb-4 text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400">Graphic Design</a>
                     <p class="text-gray-700 dark:text-gray-300">Creative graphic design services including logos, branding, marketing materials, and UI/UX design to make your brand stand out.</p>
                 </div>
                 
@@ -606,6 +626,3 @@
 </body>
 
 </html>
-
-
-

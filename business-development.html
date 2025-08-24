@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Development Services - Vibroxa Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Same style section as index.html */
+        :root { --primary: #000000; --secondary: #ffffff; }
+        .dark { --primary: #ffffff; --secondary: #000000; }
+        body { background-color: var(--secondary); color: var(--primary); transition: all 0.3s ease; }
+        .theme-toggle { cursor: pointer; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .nav-link::after { content: ''; display: block; width: 0; height: 2px; background: var(--primary); transition: width .3s; }
+        .nav-link:hover::after { width: 100%; }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+        .mobile-menu.open { max-height: 500px; }
+        .portfolio-item { transition: all 0.3s ease; }
+        .portfolio-item:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="font-sans">
+    <header class="fixed w-full z-50 bg-white dark:bg-black shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="1.png" alt="Vibroxa Studio Logo" class="h-10 w-10 mr-2">
+                    <a href="#" class="text-xl font-bold text-black dark:text-white">Vibroxa Studio</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="./index.html#home" class="nav-link text-black dark:text-white">Home</a>
+                    <a href="./about-us.html" class="nav-link text-black dark:text-white">About us</a>
+                    <div class="group relative">
+                        <a href="#services" class="nav-link text-black dark:text-white">Services</a>
+                        <div class="absolute hidden group-hover:block bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4 min-w-[200px]">
+                            <a href="web-development.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Web Development</a>
+                            <a href="app-development.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">App Development</a>
+                            <a href="graphics-design.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Graphic Design</a>
+                            <a href="video-editing.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Video Editing</a>
+                            <a href="digital-marketing.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Digital Marketing</a>
+                            <a href="business-development.html" class="block px-4 py-2 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Business Development</a>
+                        </div>
+                    </div>
+                    <a href="./index.html#portfolio" class="nav-link text-black dark:text-white">Portfolio</a>
+                    <a href="./index.html#testimonials" class="nav-link text-black dark:text-white">Testimonials</a>
+                    <a href="./index.html#contact" class="nav-link text-black dark:text-white">Contact</a>
+                    <div class="theme-toggle p-2 rounded-full bg-gray-200 dark:bg-gray-800">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+                    </div>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <div class="theme-toggle p-2 mr-2 rounded-full bg-gray-200 dark:bg-gray-800">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+                    </div>
+                    <button id="menu-toggle" class="text-black dark:text-white focus:outline-none" aria-label="Toggle menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-white dark:bg-black">
+                <div class="px-2 pt-2 pb-4 space-y-1">
+                    <a href="./index.html#home" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Home</a>
+                    <a href="./about-us.html" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">About us</a>
+                    <div class="px-3 py-2">
+                        <span class="text-base font-medium text-black dark:text-white">Services</span>
+                        <div class="mt-1 space-y-1">
+                            <a href="web-development.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Web Development</a>
+                            <a href="app-development.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">App Development</a>
+                            <a href="graphics-design.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Graphic Design</a>
+                            <a href="video-editing.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Video Editing</a>
+                            <a href="digital-marketing.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Digital Marketing</a>
+                            <a href="business-development.html" class="block pl-4 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Business Development</a>
+                        </div>
+                    </div>
+                    <a href="./index.html#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Portfolio</a>
+                    <a href="./index.html#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Testimonials</a>
+                    <a href="./indexhtml#contact" class="block px-3 py-2 rounded-md text-base font-medium text-black dark:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Business Growth Solutions</h1>
+                    <p class="text-lg mb-8 text-gray-700 dark:text-gray-300">Strategic business development services to help startups and enterprises scale effectively.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-medium rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition">Get Started</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business Development" class="rounded-lg shadow-xl w-full max-w-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="py-16 bg-white dark:bg-black">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Business Expertise</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">Comprehensive business development services:</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Market Research & Analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Business Strategy Planning</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Partnership Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Revenue Growth Strategies</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Development Process</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 flex-shrink-0 text-blue-500">1.</div>
+                            <div>
+                                <h4 class="font-semibold">Business Assessment</h4>
+                                <p class="text-gray-700 dark:text-gray-300">Comprehensive analysis of current operations</p>
+                            </div>
+                        </div>
+                        <!-- Add more process steps -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black dark:bg-white text-white dark:text-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="1.png" alt="Vibroxa Studio Logo" class="h-10 w-10 mr-2">
+                        <span class="text-xl font-bold">Vibroxa Studio</span>
+                    </div>
+                    <p class="text-gray-400 dark:text-gray-600 mb-4">Your trusted partner for comprehensive digital solutions and business growth strategies.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/ashfaq4" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="web-development.html" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Web Development</a></li>
+                        <li><a href="graphics-design.html" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Graphic Design</a></li>
+                        <li><a href="video-editing.html" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Video Editing</a></li>
+                        <li><a href="digital-marketing.html" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Digital Marketing</a></li>
+                        <li><a href="business-development.html" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Business Development</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about-us.html" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">About Us</a></li>
+                        <li><a href="index.html#portfolio" class="text-gray-400 dark:text-gray-6ß00 hover:text-white dark:hover:text-black">Portfolio</a></li>
+                        <li><a href="index.html#testimonials" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Testimonials</a></li>
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gray-400 dark:text-gray-600 mr-2 mt-1"></i>
+                            <span class="text-gray-400 dark:text-gray-600">Lahore, Pakistan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-gray-400 dark:text-gray-600 mr-2"></i>
+                            <span class="text-gray-400 dark:text-gray-600">vibroxastudio@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 dark:text-gray-600 mr-2"></i>
+                            <span class="text-gray-400 dark:text-gray-600">+92 349 2374801</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 dark:border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 dark:text-gray-600 mb-4 md:mb-0">© 2023 Vibroxa Studio. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Terms of Service</a>
+                    <a href="#" class="text-gray-400 dark:text-gray-600 hover:text-white dark:hover:text-black">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Same scripts as index.html -->
+    <script>
+           // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+        
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            
+            // Save preference to localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add shadow to navbar on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
